@@ -11,7 +11,7 @@ public class SpriteMover : MonoBehaviour
     void Update()
     {
         // Teleports when key is pressed "space"
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             SetNewPosition();
         }
