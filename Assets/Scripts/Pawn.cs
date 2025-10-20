@@ -13,6 +13,7 @@ public class Pawn : MonoBehaviour
     [Header("Components")]
     public Health health;
     public Death death;
+    public Gun gun;
 
    
     // Start is called before the first frame update
@@ -23,6 +24,8 @@ public class Pawn : MonoBehaviour
        
        // Load the Death component on start
        death = GetComponent<Death>();
+
+       gun = GetComponent<Gun>();
     }
 
     // Update is called once per frame

@@ -10,7 +10,7 @@ public class DamageOnOverlap : MonoBehaviour
      //on trigger runs the proccess of the pawn taking damage or being killed via hitbox
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Ouch! " + other.gameObject.name);
+        Debug.Log("Hit! " + other.gameObject.name);
 
         Health otherHealth = other.gameObject.GetComponent<Health>();
 
@@ -36,5 +36,26 @@ public class DamageOnOverlap : MonoBehaviour
                 otherHealth.TakeDamage(damageDone);
             }
         }
+    }
+
+    void Start()
+    {
+        
+        
+        GameManager.instance.damageZones.Add(this);
+        
+    }
+
+    void Update()
+    {
+        
+    }
+    void OnDestroy()
+    {
+        
+        
+        GameManager.instance.damageZones.Remove(this);
+        
+        
     }
 }

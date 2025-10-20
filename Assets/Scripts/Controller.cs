@@ -64,7 +64,11 @@ public class Controller : MonoBehaviour
         {
             pawn.TeleportLeft(pawn.teleportDistance);
         }
-
+        if( Input.GetKeyDown(KeyCode.Space))
+        {
+            pawn.gun.Shoot();
+        }
+        
 
 
 
