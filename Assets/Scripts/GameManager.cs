@@ -6,9 +6,19 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+    public float score;
+
     public List<DamageOnOverlap> damageZones;
 
     public Pawn pawn;
+
+    [Header("Timer")]
+
+    public float timeRemaining;
+
+    public float maxTime;
+
+    
     
     
 
@@ -31,6 +41,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         
+       
     }
 
     // Update is called once per frame
@@ -48,6 +59,16 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Failure");
         }
+    }
+
+    public void ResetTimer()
+    {
+       timeRemaining = maxTime;
+    }
+
+    public void AddScore( float amount)
+    {
+        score += amount;
     }
 }
 

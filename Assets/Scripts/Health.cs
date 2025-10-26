@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     public float maxHealth;
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         
     }
@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
 
 
 
-    public void TakeDamage( float amount)
+    public virtual void TakeDamage( float amount)
     {
         
          //Checks to see if the pawn is alive and if so deals damage
