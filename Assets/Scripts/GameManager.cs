@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
@@ -18,9 +18,17 @@ public class GameManager : MonoBehaviour
 
     public float maxTime;
 
-    
-    
-    
+    [Header("Sounds")]
+
+    public AudioClip shooting;
+    public AudioClip explosion;
+    public AudioClip death;
+
+    [Header("Backround Sound")]
+     public AudioSource backroundMusic;
+
+      
+
 
 
     void Awake()
@@ -52,12 +60,18 @@ public class GameManager : MonoBehaviour
         if (damageZones.Count == 0)
         {
             Debug.Log("Victory");
+            
+            SceneManager.LoadScene("Victory");
+
         }
 
         // Check for failure: pawn destroyed
         if (pawn == null)
         {
             Debug.Log("Failure");
+
+          SceneManager.LoadScene("Game Over");
+
         }
     }
 
@@ -70,6 +84,20 @@ public class GameManager : MonoBehaviour
     {
         score += amount;
     }
+
+   public void restart()
+   {
+     SceneManager.LoadScene("GameScene");
+   }
+
+   public void QuitGame()
+   {
+     Application.Quit();
+   }
+
+    
+
+    
 }
 
 

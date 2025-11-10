@@ -19,8 +19,11 @@ public class Controller : MonoBehaviour
         MoveIt();
     }
 
-    private void MoveIt( )
+    private void MoveIt()
     {
+
+        if (pawn == null) return ;
+        
         if( Input.GetKey(KeyCode.W))
     {
         if(Input.GetKey(KeyCode.LeftShift))
